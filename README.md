@@ -3,6 +3,14 @@ sample-vagrant README
 
 A small sample application that uses Vagrant for setup.
 
+There only two endpoints:
+
+1. Access / (http://localhost:3000/ when testing) to view all HTTP headers
+   received by the application on that request. The data displayed is saved
+   in MongoDB.
+2. Access /history (http://localhost:3000/history when testing) to see all
+   the responses saved in #1 above (not necessarily in order).
+
 A Vagrantfile has been supplied so that you can use vagrant to run this application
 in a virtual machine. The virtual machine abstracts away the various setup steps
 you need to get a testable version of your application running, and it allows you
@@ -23,9 +31,9 @@ One-Time Setup for Vagrant
 -------------------------------
 
  * Install git if you haven't already (which you already have since this is on GitHub)
- * Install VirtualBox if you haven't already: 
+ * Install VirtualBox if you haven't already:
    [https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
- * Install vagrant if you havent' already: 
+ * Install vagrant if you havent' already:
    [https://www.vagrantup.com/downloads.html](https://www.vagrantup.com/downloads.html)
 
 One-Time Setup for an application
@@ -103,10 +111,10 @@ just `cd` into it to start the application.
 
     $ cd workspace
     $ ./run.sh
-    
+
 Ports for the application and MongoDB are already shared. Once you've started
 the application (after you've run `./run.sh` as above), you can connect from
-your host operating system at 
+your host operating system at
 [http://localhost:3000/](http://localhost:3000/)
 
 You can also connect to the MongoDB instance with your tool of choice (for instance,
@@ -133,6 +141,6 @@ This is fine for the end of a development session, but if you want to completely
 remove the virtual machine from your computer you can destroy it:
 
     $ vagrant destroy
-    
+
 This is a fairly low risk activity, since you can always run `vagrant up` to
 recreate the virtual machine for you.
