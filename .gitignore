@@ -1,5 +1,6 @@
-# Vagrant directory
-.vagrant
+# Vagrant directory and virtual env
+venv/
+.vagrant/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
